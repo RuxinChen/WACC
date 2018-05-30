@@ -1,0 +1,104 @@
+,business_id,is_open,categories,review_count,city,stars,review_scale,score
+24361,b'e5M4yz-SdPNN_ptL0ACcrg',1,"['Restaurants', 'Pakistani', 'Indian']",3,b'Montreal',4.0,1,4.0
+17698,b'87Ijd_FoCxNWNFPfPy98pg',1,"['Restaurants', 'Cafes', 'Delis']",3,b'Montreal',2.5,1,2.5
+23213,b'VqZPtv6-Ag17NBpGWYBQQA',1,"['Sandwiches', 'Restaurants']",3,b'Montreal',3.5,1,3.5
+7947,b'_9uNm7NNMgiJyzEwLY9ccg',1,"['Pizza', 'Used', 'Vintage & Consignment', 'Fashion', 'Shopping', 'Restaurants']",3,b'Montreal',2.5,1,2.5
+7605,b'Y9UvlMorn7G4mxzwN5QpsQ',1,['Restaurants'],3,b'Montreal',3.5,1,3.5
+15589,b'4Rp1y8L_zecjHt6AvKtekg',1,"['Restaurants', 'Cajun/Creole']",3,b'Montreal',2.5,1,2.5
+29590,b'm7UhhqWvdt_T3tA73qHqnQ',1,"['Restaurants', 'Italian']",3,b'Montreal',2.5,1,2.5
+33910,b'Xx1x_ddf34Fru7RmKqOp-g',1,"['Soup', 'Restaurants', 'Salad', 'Sandwiches']",3,b'Montreal',1.5,1,1.5
+7455,b'iHW6eAtoyoONYTeI5H1QCw',1,"['Seafood', 'Restaurants']",3,b'Montreal',4.5,1,4.5
+35353,b'SyxHyAqVEacDlXC1yEMv0A',1,"['Restaurants', 'Bars', 'Nightlife', 'Pubs']",3,b'Montreal',2.5,1,2.5
+40970,b'0WxO9_lzwKIdPF93ucUxQA',1,"['Caterers', 'Grocery', 'Restaurants', 'Event Planning & Services', 'Food Delivery Services', 'Food']",3,b'Montreal',2.5,1,2.5
+40890,b'MAcOjLalR6CoxMLy9zohNQ',1,"['Bistros', 'Restaurants']",3,b'Montreal',4.0,1,4.0
+4345,b'Z5Dq4_MvsW0-83Oj-2CTeA',1,"['Mediterranean', 'Falafel', 'Restaurants', 'Lebanese', 'Middle Eastern']",3,b'Montreal',3.0,1,3.0
+14794,b'm_Zfn3rZriVihppxewzRXA',1,"['Restaurants', 'Italian']",3,b'Montreal',3.5,1,3.5
+27790,b'ZeWho7cld53zOr0HSkh-kQ',1,"['Coffee & Tea', 'Food', 'Restaurants', 'Grocery', 'Sandwiches', 'Delis']",4,b'Montreal',3.0,1,3.0
+521,b'mJzm0yQQ16iBfkmOHFvwRA',1,"['Restaurants', 'Italian']",4,b'Montreal',4.5,1,4.5
+9503,b'aLpZkaUfMnaxkVm56LlvVw',1,"['Burgers', 'Restaurants']",4,b'Montreal',4.5,1,4.5
+7028,b'UntbR8C0Mxsfd-hNBZXO-w',1,"['Pizza', 'Restaurants']",4,b'Montreal',4.5,1,4.5
+25979,b'U8Nu8uK7u1_LhoqRqLTeBQ',1,"['Caterers', 'Event Planning & Services', 'French', 'Restaurants']",4,b'Montreal',3.5,1,3.5
+26952,b'VozHPBbxlJJfyKxKOtcCow',1,"['Sugar Shacks', 'Restaurants', 'Canadian (New)', 'Food']",4,b'Montreal',3.0,1,3.0
+27669,b'-JVDTSgNMx2eqOCft3At-w',1,"['Breakfast & Brunch', 'Furniture Rental', 'Local Services', 'Shopping', 'Home & Garden', 'Restaurants', 'Scandinavian', 'Home Decor', 'Cafes']",4,b'Montreal',3.0,1,3.0
+26823,b'GZ4UciilQ8pYTC2k7hDxaA',1,"['Restaurants', 'Cafes']",4,b'Montreal',3.0,1,3.0
+7783,b'u0HKOUtd-bP5DthQMB2Wqg',1,"['Restaurants', 'Sushi Bars', 'Japanese']",4,b'Montreal',4.0,1,4.0
+2727,b'5K52Ebki9ezeTmFe_HPPSA',1,"['Restaurants', 'Japanese']",5,b'Montreal',2.5,1,2.5
+8273,b'LASaAPHCuJyay3BNtGwbyQ',1,"['Coffee & Tea', 'Food', 'Sandwiches', 'Restaurants']",5,b'Montreal',2.5,1,2.5
+25221,b'Y36tFpneLbaVt9p0XL4aCw',1,"['Pizza', 'Restaurants']",5,b'Montreal',4.5,1,4.5
+17403,b'gVMu_ToZCgRSzfBm_lsuRw',1,"['Hot Dogs', 'Poutineries', 'Fast Food', 'Restaurants']",5,b'Montreal',4.0,1,4.0
+16828,b'eZ5xctlNwdArV15j6swBYQ',1,"['Canadian (New)', 'Seafood', 'Restaurants', 'Steakhouses']",5,b'Montreal',2.0,1,2.0
+38198,b'TiKTTrGIC3uFuWBkbVKE3w',1,"['Restaurants', 'Sushi Bars']",6,b'Montreal',2.0,2,4.0
+29250,b'MJd63eC5qluvww6ERoZRBw',1,"['Mediterranean', 'Restaurants']",6,b'Montreal',2.0,2,4.0
+37406,b'L2QYRM_9jyd4r4qPVF7Cgw',1,"['Sandwiches', 'Burgers', 'Restaurants', 'Pizza']",6,b'Montreal',4.0,2,8.0
+29763,b'Nl7rJYLRrVZ89xuDtf4gFA',1,"['Fast Food', 'Chicken Wings', 'Restaurants']",6,b'Montreal',3.5,2,7.0
+18107,b'EVe1uRxc6qBdvd9lTWSH4g',1,"['Burgers', 'Fast Food', 'Restaurants']",6,b'Montreal',2.0,2,4.0
+54519,b'TtuW_nIHFYkhiZOx4Ot7aA',1,"['Restaurants', 'Mediterranean', 'Arabian']",6,b'Montreal',4.0,2,8.0
+4731,b'4jsNKfrbgssqKObCzj05hw',1,"['Bubble Tea', 'Restaurants', 'Food', 'Cafes']",6,b'Montreal',3.0,2,6.0
+7522,b'hFLIA21X3y9oFdQS-OEpYg',1,"['Fast Food', 'Restaurants', 'Ice Cream & Frozen Yogurt', 'Food']",6,b'Montreal',3.0,2,6.0
+15942,b'uHSmRkzznq0GpWXWuvzuhw',1,"['Restaurants', 'Fast Food']",7,b'Montreal',1.5,2,3.0
+49581,b'I_3cy0TaRDPXq10G5FI3Zw',1,"['Japanese', 'Restaurants', 'Korean']",7,b'Montreal',4.5,2,9.0
+13106,b'bMy6Us7JX-3XFpfnzJIsAA',1,"['Barbeque', 'Restaurants', 'Korean', 'Pan Asian']",8,b'Montreal',3.0,2,6.0
+626,b'Nfovc-aKljzls-yDYfU2LQ',1,"['Sushi Bars', 'Restaurants']",8,b'Montreal',4.5,2,9.0
+13803,b'6YisCAG-Y3rT2orW0oWaKw',1,"['Delicatessen', 'Cafes', 'Caterers', 'Food', 'Restaurants', 'Event Planning & Services', 'Bakeries', 'Tea Rooms']",9,b'Montreal',4.0,2,8.0
+19542,b'Xu3y7gnAdOOMrDreVktA6w',1,"['Restaurants', 'Brasseries']",9,b'Montreal',4.5,2,9.0
+51109,b'4iOC8nPS2UF_mKzV9CYqYQ',1,"['Burgers', 'Fast Food', 'Restaurants']",10,b'Montreal',3.5,2,7.0
+41980,b'p0aNNb7o6Ou6kn4apz4lkQ',1,"['Chinese', 'Restaurants', 'Tea Rooms', 'Food']",10,b'Montreal',4.0,2,8.0
+45932,b'qP9qiHLt9-goLGFmPvQZ1Q',1,"['Restaurants', 'Bistros']",11,b'Montreal',3.5,2,7.0
+34308,b'8wzmMErtIDTVhQZDAC0gdQ',1,"['Restaurants', 'Fish & Chips']",12,b'Montreal',3.0,2,6.0
+2490,b'kBe-uPMtDgY4ozLvY-qA4w',1,"['Beer', 'Wine & Spirits', 'Nightlife', 'Restaurants', 'Pubs', 'Brasseries', 'Bars', 'Food']",12,b'Montreal',3.5,2,7.0
+51967,b'WQNEmumkvsNskweAH1d8nA',1,"['Specialty Food', 'Food', 'Fast Food', 'Restaurants']",12,b'Montreal',2.5,2,5.0
+52586,b'J2GTY3N_nH7d4L7ngCWKsw',1,"['Seafood', 'Restaurants', 'Barbeque', 'Mediterranean', 'Fish & Chips']",13,b'Montreal',4.0,2,8.0
+21813,b'DQoxF7u3SelehcrkzLUR-A',1,"['Pizza', 'Greek', 'Restaurants']",13,b'Montreal',4.5,2,9.0
+7309,b'HY5IM3dzUgO8yNgi9c0DIw',1,"['Indian', 'Restaurants']",14,b'Montreal',4.0,2,8.0
+9237,b'_UZR3RZ56PnUO2ZpNba0Kg',1,"['Chinese', 'Restaurants']",15,b'Montreal',3.0,2,6.0
+35643,b'ZM-BSBJRa5Wv8iYtLpEcww',1,"['Breakfast & Brunch', 'Restaurants', 'Canadian (New)', 'International']",15,b'Montreal',2.5,2,5.0
+24917,b'jJALMyBDfqOjzuuQAooDtw',1,"['American (New)', 'Sushi Bars', 'Restaurants', 'Japanese']",15,b'Montreal',4.0,2,8.0
+20269,b'BHTWG6p3FsnnlCGMotvuAQ',1,"['Event Planning & Services', 'Restaurants', 'Italian', 'Caterers']",16,b'Montreal',4.0,3,12.0
+14541,b'hzmiO1S-P7BZxtEDK8e9Mg',1,"['Pizza', 'Restaurants']",16,b'Montreal',3.5,3,10.5
+51763,b'bIM964qExbMiHouvH7KZBg',1,"['Delicatessen', 'Restaurants', 'Breakfast & Brunch', 'Mediterranean', 'Cafes', 'Food', 'Specialty Food', 'Portuguese']",16,b'Montreal',4.0,3,12.0
+15686,b'ocopYdoCGSD-yKL3hhjoAw',1,"['Cafes', 'Coffee & Tea', 'Restaurants', 'Food']",17,b'Montreal',4.0,3,12.0
+31887,b'BQ4dNHuuEvCVBNcjBVhtIQ',1,"['Restaurants', 'Sandwiches', 'Italian', 'Pizza']",17,b'Montreal',2.5,3,7.5
+37756,b'VQkrYJgDZIDsnaphQh1ZDw',1,"['French', 'Breakfast & Brunch', 'Restaurants']",18,b'Montreal',3.0,3,9.0
+7472,b'QD0gnPAdy7w2vZZG9I41Sw',1,"['Restaurants', 'French']",18,b'Montreal',3.5,3,10.5
+6725,b'gChKuDVFsc7tjuj9iCTzYQ',1,"['Cafes', 'Restaurants']",18,b'Montreal',4.0,3,12.0
+34530,b'IHX9FiUyNxxGFgFS5rTOxQ',1,"['Restaurants', 'Chinese']",19,b'Montreal',4.0,3,12.0
+27807,b'SIh9FBI54_FU_jrFxv4h2A',1,"['Salad', 'Sandwiches', 'Restaurants', 'Pizza']",19,b'Montreal',4.0,3,12.0
+50777,b'9NUzqXvKC-Ah9I_62UD-Bg',1,"['Wine Bars', 'Bars', 'Food', 'Public Markets', 'Juice Bars & Smoothies', 'Farmers Market', 'Delicatessen', 'Cafes', 'Nightlife', 'Shopping', 'Restaurants']",21,b'Montreal',4.5,3,13.5
+12304,b'UTiG1oIeTKm6SQLqE8fD_A',1,"['Japanese', 'Restaurants']",21,b'Montreal',3.0,3,9.0
+2758,b'GUEWBcErEzW-YYREq4ct6w',1,"['Sushi Bars', 'Restaurants']",23,b'Montreal',4.0,3,12.0
+50422,b'C-lAQbNBuXPGeoPWB0_V5A',1,"['Breakfast & Brunch', 'Restaurants']",27,b'Montreal',3.0,3,9.0
+18909,b'2tiFUn8EU0EpjWBHjt1L6w',1,"['Chinese', 'Restaurants']",27,b'Montreal',2.5,3,7.5
+32530,b'JobEckBpEYmm_L9JOe8TEg',1,"['Restaurants', 'Coffee & Tea', 'Food', 'Internet Cafes', 'Cafes']",29,b'Montreal',4.5,3,13.5
+52945,b'7EbrIfLTqQjKn320KUaDOg',1,"['Restaurants', 'Food', 'Cafes', 'Vegan', 'Coffee & Tea']",29,b'Montreal',4.5,3,13.5
+15013,b'9u-nVJmHz_fB6CFW41JI-w',1,"['Restaurants', 'Food', 'Sandwiches', 'Soup', 'Coffee & Tea']",33,b'Montreal',4.5,3,13.5
+20,b'c_XbaJqhm-5ycSBOkVUBmg',1,"['Restaurants', 'Mexican']",33,b'Montreal',3.5,3,10.5
+19393,b'yZZIs-9_AqoHXb2Z6g26kQ',1,"['Restaurants', 'Buffets']",33,b'Montreal',4.5,3,13.5
+21841,b'RSSZt1bcFHbvYYTI2he6lg',1,"['Barbeque', 'Korean', 'Restaurants']",33,b'Montreal',3.0,3,9.0
+16631,b'Yewxcf5-kbESoS5r1l-1AQ',1,"['Mexican', 'Restaurants']",35,b'Montreal',4.0,3,12.0
+10727,b'xGfaKtKoAOwy2RpvKXIIYQ',1,"['Barbeque', 'Restaurants', 'Chicken Shop']",36,b'Montreal',3.0,3,9.0
+53925,b't9qwDXoky-8g893KqkY-_A',1,"['Home Decor', 'Home & Garden', 'Kitchen & Bath', 'Shopping', 'Furniture Stores', 'Restaurants']",38,b'Montreal',3.0,4,12.0
+32694,b'OKZZpePG48tKExe4ct_2bg',1,"['Breakfast & Brunch', 'Creperies', 'Restaurants', 'Food', 'Coffee & Tea']",39,b'Montreal',4.5,4,18.0
+40762,b'N52YfkFdHjZpdUV_-nkJbw',1,"['Sandwiches', 'Bars', 'Breakfast & Brunch', 'Restaurants', 'Nightlife']",39,b'Montreal',4.5,4,18.0
+10627,b'dEmNOTm8Rmm9JYZdGX_Lhw',1,"['Restaurants', 'Italian']",40,b'Montreal',4.0,4,16.0
+35382,b'2MSqfWIaD58x7eysFN-9qA',1,"['Dim Sum', 'Restaurants', 'Chinese']",41,b'Montreal',3.5,4,14.0
+48339,b'RZk_PE-H9SygqwSQd88cWQ',1,"['Restaurants', 'French']",41,b'Montreal',3.5,4,14.0
+32149,b'jsqhG0WJ8xgpxcAAWQccNg',1,"['Restaurants', 'Asian Fusion']",47,b'Montreal',3.5,4,14.0
+1325,b'6fd9EIo9TAFvJLkfC7_qYA',1,"['Breakfast & Brunch', 'Restaurants']",47,b'Montreal',4.5,4,18.0
+33493,b'xGaptKX4_5cT9lGxwbZsQQ',1,"['Coffee & Tea', 'Restaurants', 'Cafes', 'Patisserie/Cake Shop', 'Food']",48,b'Montreal',4.0,4,16.0
+38473,b'VDdX2TGa9hNHwjzrnVSC_A',1,"['Restaurants', 'Coffee & Tea', 'Food', 'Tea Rooms', 'Chinese']",49,b'Montreal',4.5,4,18.0
+5307,b'-unEKbRspO6OuEaPdmRywg',1,"['Lounges', 'Restaurants', 'Nightlife', 'Bars', 'French']",52,b'Montreal',4.0,4,16.0
+17425,b'9B9VEYYj8oW5byOZeerwaQ',1,"['Restaurants', 'Food', 'Cafes', 'Coffee & Tea']",53,b'Montreal',3.5,4,14.0
+32304,b'-Levln3VcfeXS4iHt5ct9A',1,"['Japanese', 'Restaurants']",54,b'Montreal',4.5,4,18.0
+973,b'U6Jf5-cUyxkMbXdxLLq6IA',1,"['Desserts', 'Creperies', 'Food', 'Restaurants']",54,b'Montreal',3.5,4,14.0
+4769,b'qtsIl9bBtsbxIGK5Zf_F-g',1,"['Food', 'Beer', 'Wine & Spirits', 'Restaurants', 'Bakeries', 'Cooking Schools', 'Specialty Schools', 'Cafes', 'Education']",54,b'Montreal',4.5,4,18.0
+12528,b'x-4YTxRXrNaW6Rua2j-7wA',1,"['Indian', 'Pakistani', 'Restaurants']",58,b'Montreal',4.0,4,16.0
+37825,b'ZL9sk7Imc42BNRhcjgnqPw',1,"['Thai', 'Restaurants', 'Chinese']",67,b'Montreal',3.5,4,14.0
+28030,b'NfbL91oFvP3dhvNka8rG5Q',1,"['Restaurants', 'Middle Eastern', 'Canadian (New)', 'Mediterranean', 'Salad', 'Sandwiches']",76,b'Montreal',4.0,4,16.0
+39330,b'xF4xbsAdhr44s9psc_v7tQ',1,"['Restaurants', 'Food', 'Sandwiches', 'Kosher', 'Breakfast & Brunch', 'Delis', 'Specialty Food']",81,b'Montreal',4.5,4,18.0
+7433,b'KNBHGY4rQVuoHxZf_6ANuw',1,"['Restaurants', 'Hotels', 'Hotels & Travel', 'Venues & Event Spaces', 'Event Planning & Services', 'French']",85,b'Montreal',4.0,4,16.0
+35445,b'VkEGJmVgi7TOU6ZDi6piTQ',1,"['Cafes', 'Desserts', 'Specialty Food', 'Food', 'Restaurants']",111,b'Montreal',4.5,4,18.0
+37480,b'ubOoMnnqm5w30gh_eRNxkA',1,"['Breakfast & Brunch', 'Delis', 'Restaurants', 'Diners']",185,b'Montreal',3.5,4,14.0
+54031,b'Dl3ty7Rt2WeBIAUoBF0EXg',1,"['Polish', 'Restaurants']",222,b'Montreal',4.5,4,18.0
+54408,b'zw4Legbcu018p5WcZ74iWA',1,"['French', 'Diners', 'Poutineries', 'Burgers', 'Restaurants']",261,b'Montreal',4.0,4,16.0
+54172,b'gjATEWAllTfxfxhGqJ93sQ',1,"['Restaurants', 'Italian', 'Pizza']",292,b'Montreal',4.0,4,16.0
+13500,b'wl6w2VNMA4g6O9lu7kTvFA',1,"['Sandwiches', 'Steakhouses', 'Delis', 'Restaurants']",395,b'Montreal',4.0,4,16.0
