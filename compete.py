@@ -5,61 +5,59 @@ from mrjob.step import MRStep
 from mr3px.csvprotocol import CsvProtocol
 import csv
 from math import radians, cos, sin, asin, sqrt
-###############################################################
-# python3 competition.py --file restaurant.csv restaurant.csv
-# python3 compete.py --file sample_db.csv sample_db.csv > d10.csv
-###############################################################
-
-#df = pd.read_csv('sample.csv', sep=",")
+########################################################################
+# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d20.csv
+########################################################################
 
 class MRPair(MRJob):
 
-    #OUTPUT_PROTOCOL = CsvProtocol
+    OUTPUT_PROTOCOL = CsvProtocol
 
     def mapper_init(self):
         self.df = df 
-        self.num = 0
+        self.lst_of_city = lst_of_city
 
     def mapper(self, _, line):
-
         line = np.array(line.split(','))
-        self.num += 1
-        #print(self.num)
-        id1, lat1, lng1 = line[2], line[7], line[8]
+        id1, lat1, lng1, city1= line[0], line[1], line[2], line[3][2:][:-1]
         for i, row in self.df.iterrows():
-            id2, lat2, lng2 = row[2], row[7], row[8]
-            #print(lat2)
-            if id2 != id1 and id2 != None:
-                #yield (id1, id2), (lat1, lng1, lat2, lng2)
-                l = [id1, id2]
-                l.sort()
-                if l[0] == id1: 
-                    yield (id1, id2), (lat1, lng1, lat2, lng2)
-                else:
-                    yield (id2, id1), (lat1, lng1, lat2, lng2)
-    '''  
-    def combiner(self, key, value):
-        location = list(value)
+            id2, lat2, lng2, city2 = row[0], row[1], row[2], row[3][2:][:-1]
+            if city1 in self.lst_of_city:
+                if id2 != id1 and id2 != None and city1 == city2:
+                    l = [id1, id2]
+                    l.sort()
+                    if l[0] == id1: 
+                        yield (id1, id2), (lat1, lng1, lat2, lng2)
+                    else:
+                        yield (id2, id1), (lat2, lng2, lat1, lng1)
 
-        lat1, lng1= location[0], location[1]
-        lat2, lng2= location[2], location[3]
-        #print(lat2)
-        haversine = haversine(lat1, lng1, lat2, lng2)
-        #levenshtein = self.levenshtein(cat1, cat2)
-        #overlap_cat = self.category(cat1, cat2)
-        yield key, haversine
-        #except:
-        #    yield None, None
+    def combiner(self, key, value):
+        location = list(value)[0]
+        lat1, lng1= float(location[0]), float(location[1])
+        lat2, lng2= float(location[2]), float(location[3])
+        h = haversine(lat1, lng1, lat2, lng2)
+        yield key, h
+
     def reducer(self, key, haversine):
         haversine = list(haversine) 
         if haversine != None:
-            print(haversine)
-            if haversine[0] <= 10:     
+            if haversine[0] <= 20:     
                 yield key[0], key[1]
 
     def reducer_final(self, key, value):
-        yield ([key]+list(value), None) 
-    '''
+        lst = list(value)
+        length = len(lst)
+        lst = [length] + lst
+        yield key, lst
+
+
+    def steps(self):
+        return [MRStep(mapper_init=self.mapper_init,
+            mapper = self.mapper,
+            combiner=self.combiner,
+            reducer=self.reducer),
+        MRStep(reducer=self.reducer_final)]
+    
 
 ############################## auxiliary functions ##########################      
 def haversine(lat1, lng1, lat2, lng2):
@@ -78,8 +76,7 @@ def haversine(lat1, lng1, lat2, lng2):
 
     # 6367 km is the radius of the Earth
     km = 6367 * c
-    m = km * 1000
-    return m
+    return km
 
     def category(self, cat_list1, cat_list2):
         '''
@@ -127,8 +124,8 @@ def haversine(lat1, lng1, lat2, lng2):
         return MAX_PRICE - abs(range1 - range2)
 ##########################################################################
 
-
 if __name__ == '__main__':
 
-    df = pd.read_csv('sample_db.csv', sep=",")
+    df = pd.read_csv('neighbor.csv', sep=",", header = None)
+    lst_of_city = ["Las Vegas", "Phoenix", "Toronto", "Montreal"]
     MRPair.run()
