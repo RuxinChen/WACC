@@ -2,25 +2,29 @@ import numpy as np
 import pandas as pd
 from mrjob.job import MRJob
 from mrjob.step import MRStep
-from mr3px.csvprotocol import CsvProtocol
+#from mr3px.csvprotocol import CsvProtocol
+from mrjob import protocol
 import csv
 from math import radians, cos, sin, asin, sqrt
 ################################################################################
-# python3 compete.py --file neighbor_d3.csv neighbor_d3.csv > category_d3.csv
+# python3 compete.py --file new_neighbor_d3.csv new_neighbor_d3.csv > category_d3.csv
 ################################################################################
 
 class MRPair(MRJob):
 
-    OUTPUT_PROTOCOL = CsvProtocol
+    #OUTPUT_PROTOCOL = CsvProtocol
+    OUTPUT_PROTOCOL = protocol.TextProtocol
 
     def mapper_init(self):
         self.df = df 
 
     def mapper(self, _, line):
+        #print(len(line))
         line = np.array(line.split(','))
         id1, id2 = line[0], line[1]
         #id1_val, id2_val = line[0][1:-1], line[1][1:-1]
-        #print(id1)
+        #print(id2)
+        #print(self.df['business_id'][:10])
         cat1 = list(self.df[self.df['business_id'] == id1]['categories'])
         cat1 = cat1[0].split(",")
         cat1[0] = cat1[0][2:-1]
@@ -35,7 +39,6 @@ class MRPair(MRJob):
         yield (id1, id2), (cat1, cat2)
         #yield "id1", "id2"
 
-
     def reducer(self, key, value):
         lst_of_categories = list(value)[0]
         cat1 = lst_of_categories[0]
@@ -46,7 +49,7 @@ class MRPair(MRJob):
             cat2.remove("Restaurants")
         l = levenshtein(cat1, cat2)
         o = category(cat1, cat2)
-        yield (None, [key, l, o])
+        yield key[0]+'\t'+ key[1], str(l) + '\t' + str(o)
 
 
 ############################## auxiliary functions ##########################      
