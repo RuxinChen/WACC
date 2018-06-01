@@ -6,7 +6,7 @@ from mr3px.csvprotocol import CsvProtocol
 import csv
 from math import radians, cos, sin, asin, sqrt
 ########################################################################
-# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d20.csv
+# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d3.csv
 ########################################################################
 
 class MRPair(MRJob):
@@ -41,22 +41,21 @@ class MRPair(MRJob):
     def reducer(self, key, haversine):
         haversine = list(haversine) 
         if haversine != None:
-            if haversine[0] <= 20:     
-                yield key[0], key[1]
+            if haversine[0] <= 3:     
+                yield (None, key)
 
-    def reducer_final(self, key, value):
-        lst = list(value)
-        length = len(lst)
-        lst = [length] + lst
-        yield key, lst
+    #def reducer_final(self, key, value):
+    #    lst = list(value)
+    #    length = len(lst)
+    #   lst = [key, length] + lst
+    #    yield (None, lst)
 
-
-    def steps(self):
-        return [MRStep(mapper_init=self.mapper_init,
-            mapper = self.mapper,
-            combiner=self.combiner,
-            reducer=self.reducer),
-        MRStep(reducer=self.reducer_final)]
+    #def steps(self):
+    #    return [MRStep(mapper_init=self.mapper_init,
+    #        mapper = self.mapper,
+    #        combiner=self.combiner,
+    #        reducer=self.reducer),
+    #    MRStep(reducer=self.reducer_final)]
     
 
 ############################## auxiliary functions ##########################      
