@@ -42,20 +42,20 @@ class MRPair(MRJob):
         haversine = list(haversine) 
         if haversine != None:
             if haversine[0] <= 3:     
-                yield key[0], key[1]
+                yield (None, key)
 
-    def reducer_final(self, key, value):
-        lst = list(value)
-        length = len(lst)
-        lst = [key, length] + lst
-        yield (None, lst)
+    #def reducer_final(self, key, value):
+    #    lst = list(value)
+    #    length = len(lst)
+    #   lst = [key, length] + lst
+    #    yield (None, lst)
 
-    def steps(self):
-        return [MRStep(mapper_init=self.mapper_init,
-            mapper = self.mapper,
-            combiner=self.combiner,
-            reducer=self.reducer),
-        MRStep(reducer=self.reducer_final)]
+    #def steps(self):
+    #    return [MRStep(mapper_init=self.mapper_init,
+    #        mapper = self.mapper,
+    #        combiner=self.combiner,
+    #        reducer=self.reducer),
+    #    MRStep(reducer=self.reducer_final)]
     
 
 ############################## auxiliary functions ##########################      
