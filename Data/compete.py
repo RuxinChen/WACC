@@ -47,9 +47,8 @@ class MRPair(MRJob):
     def reducer_final(self, key, value):
         lst = list(value)
         length = len(lst)
-        lst = [length] + lst
-        yield key, lst
-
+        lst = [key, length] + lst
+        yield (None, lst)
 
     def steps(self):
         return [MRStep(mapper_init=self.mapper_init,
