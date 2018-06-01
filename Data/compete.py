@@ -9,7 +9,6 @@ from math import radians, cos, sin, asin, sqrt
 # python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d10.csv
 ########################################################################
 
-
 class MRPair(MRJob):
 
     OUTPUT_PROTOCOL = CsvProtocol
@@ -24,7 +23,6 @@ class MRPair(MRJob):
         for i, row in self.df.iterrows():
             id2, lat2, lng2, city2 = row[0], row[1], row[2], row[3][2:][:-1]
             if city1 in self.lst_of_city:
-                print(city1)
                 if id2 != id1 and id2 != None and city1 == city2:
                     l = [id1, id2]
                     l.sort()
@@ -38,8 +36,6 @@ class MRPair(MRJob):
         lat1, lng1= float(location[0]), float(location[1])
         lat2, lng2= float(location[2]), float(location[3])
         h = haversine(lat1, lng1, lat2, lng2)
-        #levenshtein = self.levenshtein(cat1, cat2)
-        #overlap_cat = self.category(cat1, cat2)
         yield key, h
 
     def reducer(self, key, haversine):
@@ -50,6 +46,8 @@ class MRPair(MRJob):
 
     def reducer_final(self, key, value):
         lst = list(value)
+        length = len(lst)
+        lst = [length] + lst
         yield key, lst
 
 
