@@ -7,7 +7,7 @@ from mrjob import protocol
 import csv
 from math import radians, cos, sin, asin, sqrt
 ########################################################################
-# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d3.csv
+# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d3.csv 
 ########################################################################
 
 class MRPair(MRJob):
@@ -16,8 +16,8 @@ class MRPair(MRJob):
     OUTPUT_PROTOCOL = protocol.TextProtocol
 
     def mapper_init(self):
-        self.df = df 
-        self.lst_of_city = lst_of_city
+        self.df = pd.read_csv('neighbor.csv', sep=",", header = None)
+        self.lst_of_city = ["Las Vegas", "Phoenix", "Toronto", "Montreal"]
 
     def mapper(self, _, line):
         line = np.array(line.split(','))
@@ -44,7 +44,7 @@ class MRPair(MRJob):
         haversine = list(haversine) 
         if haversine != None:
             if haversine[0] <= 3:     
-                yield key[0], key[1]
+                yield key[0]+'\t'+key[1], str(haversine[0])
 
     #def reducer_final(self, key, value):
     #    lst = list(value)
@@ -127,6 +127,4 @@ def haversine(lat1, lng1, lat2, lng2):
 
 if __name__ == '__main__':
 
-    df = pd.read_csv('neighbor.csv', sep=",", header = None)
-    lst_of_city = ["Las Vegas", "Phoenix", "Toronto", "Montreal"]
     MRPair.run()

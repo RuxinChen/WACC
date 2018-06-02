@@ -16,7 +16,7 @@ class MRPair(MRJob):
     OUTPUT_PROTOCOL = protocol.TextProtocol
 
     def mapper_init(self):
-        self.df = df 
+        self.df = pd.read_csv('category.csv', sep=",", encoding='utf-8')
 
     def mapper(self, _, line):
         #print(len(line))
@@ -92,5 +92,4 @@ def levenshtein(cat_list1, cat_list2):
 
 if __name__ == '__main__':
 
-    df = pd.read_csv('category.csv', sep=",", encoding='utf-8')
     MRPair.run()
