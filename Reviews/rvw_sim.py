@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 from mrjob.job import MRJob
 from mrjob.step import MRStep
-from mr3px.csvprotocol import CsvProtocol
+from mrjob import protocol
+# from mr3px.csvprotocol import CsvProtocol
 import csv
 from math import radians, cos, sin, asin, sqrt
 from gensim.corpora import Dictionary
@@ -11,20 +12,19 @@ from nltk.corpus import stopwords
 import re
 ################################################################################
 # python3 rvw_sim.py --file neighbor_d3.csv neighbor_d3.csv > category_d3.csv
-#python3 rvw_sim.py n_sample5_2.csv > rvw_sim.csv
-# python3 rvw_sim.py --file n_sample5_2.csv n_sample5_2.csv
+# python3 rvw_sim.py n_sample5_2.csv > rvw_sim.txt
 ############################################################################
 
 class MRPair(MRJob):
 
-    OUTPUT_PROTOCOL = CsvProtocol
+    # OUTPUT_PROTOCOL = CsvProtocol
+    # OUTPUT_PROTOCOL = protocol.TextProtocol
 
     def mapper_init(self):
-        self.df = df
-        # self.rvws = df['text'].tolist()
-        # self.rvws = [rvws_to_wordlist(r, True) for r in self.rvws]
-        # self.dct = Dictionary(self.rvws)
-        # print(self.dct)
+        location = r"/Users/mengchenshi/Downloads/Spr-18/CS/Project/Codes2/rvw_groupby_rest_little.csv"
+        self.df = pd.read_csv(location)
+        # self.df = pd.read_csv('rvw_groupby_rest_little.csv')
+
 
     def mapper(self, _, line):
         line = np.array(line.split(','))
@@ -53,7 +53,11 @@ class MRPair(MRJob):
         yield (id1, id2), (rvws1, rvws2)
 
     def reducer_init(self):
-        self.rvws = df['text'].tolist()
+        location = r"/Users/mengchenshi/Downloads/Spr-18/CS/Project/Codes2/rvw_groupby_rest_little.csv"
+        self.df = pd.read_csv(location)
+        # self.df = pd.read_csv('rvw_groupby_rest_little.csv')
+
+        self.rvws = self.df['text'].tolist()
         self.rvws = [rvws_to_wordlist(r, True) for r in self.rvws]
         self.dct = Dictionary(self.rvws)
         # print(self.dct)
@@ -66,7 +70,7 @@ class MRPair(MRJob):
         sim = cossim(self.dct.doc2bow(rvws1), self.dct.doc2bow(rvws2))
         # similarity.append((biz[i], biz[j], sim))
         # print('reducer')
-        yield (None, [key, sim])
+        yield key, sim
 
 
 
@@ -92,7 +96,7 @@ def rvws_to_wordlist(rvws, remove_stopwords=False):
 ##########################################################################
 
 if __name__ == '__main__':
-    df = pd.read_csv('rvw_groupby_rest.csv')
+    # df = pd.read_csv('rvw_groupby_rest_little.csv')
     # print('df')
     # df = pd.read_csv('rvw_groupby_rest.csv')
     MRPair.run()
