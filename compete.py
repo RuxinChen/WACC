@@ -7,7 +7,7 @@ from mrjob import protocol
 import csv
 from math import radians, cos, sin, asin, sqrt
 ########################################################################
-# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d3.csv
+# python3 compete.py --file neighbor.csv neighbor.csv > neighbor_d3.csv 
 ########################################################################
 
 class MRPair(MRJob):
@@ -44,7 +44,7 @@ class MRPair(MRJob):
         haversine = list(haversine) 
         if haversine != None:
             if haversine[0] <= 3:     
-                yield key[0], key[1]
+                yield key[0]+'\t'+key[1], str(haversine[0])
 
     #def reducer_final(self, key, value):
     #    lst = list(value)
