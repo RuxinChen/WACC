@@ -11,7 +11,7 @@ from gensim.matutils import cossim
 from nltk.corpus import stopwords
 import re
 ################################################################################
-# python3 rvw_sim.py --file n_sample5_2.csv rvw_groupby_rest_little.csv > rvw_sim.txt
+# python3 rvw_sim.py --file n_sample5_2.csv n_samle5_2.csv > rvw_sim.txt
 ############################################################################
 
 class MRPair(MRJob):
@@ -52,8 +52,8 @@ class MRPair(MRJob):
         yield (id1, id2), (rvws1, rvws2)
 
     def reducer_init(self):
-        location = r"/Users/mengchenshi/Downloads/Spr-18/CS/Project/Codes2/rvw_groupby_rest_little.csv"
-        self.df = pd.read_csv(location)
+        # location = r"/Users/mengchenshi/Downloads/Spr-18/CS/Project/Codes2/rvw_groupby_rest_little.csv"
+        self.df = pd.read_csv('rvw_groupby_rest_little.csv')
         # self.df = pd.read_csv('rvw_groupby_rest_little.csv')
 
         self.rvws = self.df['text'].tolist()
