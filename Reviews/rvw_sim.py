@@ -5,13 +5,13 @@ from mrjob.step import MRStep
 from mrjob import protocol
 # from mr3px.csvprotocol import CsvProtocol
 import csv
-from math import radians, cos, sin, asin, sqrt
 from gensim.corpora import Dictionary
 from gensim.matutils import cossim
-from nltk.corpus import stopwords
+from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
+# from nltk.corpus import stopwords
 import re
 ################################################################################
-# python3 rvw_sim.py --file n_sample5_2.csv n_samle5_2.csv > rvw_sim.txt
+# python3 rvw_sim.py  -r dataproc --file rvw_groupby_rest_little.csv n_sample5_2.csv > rvw_sim.txt
 ############################################################################
 
 class MRPair(MRJob):
@@ -88,8 +88,9 @@ def rvws_to_wordlist(rvws, remove_stopwords=False):
     rvws_text = re.sub("[^a-zA-Z]", " ", rvws)
     words = rvws_text.lower().split()
     if remove_stopwords:
-        stops = set(stopwords.words("english"))
-        words = [w for w in words if not w in stops]
+        # stops = set(stopwords.words("english"))
+        # words = [w for w in words if not w in stops]
+        words = [w for w in words if not w in ENGLISH_STOP_WORDS]
     return words
 
 
