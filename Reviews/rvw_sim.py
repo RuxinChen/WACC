@@ -17,7 +17,7 @@ import re
 class MRPair(MRJob):
 
     # OUTPUT_PROTOCOL = CsvProtocol
-    # OUTPUT_PROTOCOL = protocol.TextProtocol
+    OUTPUT_PROTOCOL = protocol.TextProtocol
 
     def mapper_init(self):
         # location = r"/Users/mengchenshi/Downloads/Spr-18/CS/Project/Codes2/rvw_groupby_rest_little.csv"
@@ -69,7 +69,8 @@ class MRPair(MRJob):
         sim = cossim(self.dct.doc2bow(rvws1), self.dct.doc2bow(rvws2))
         # similarity.append((biz[i], biz[j], sim))
         # print('reducer')
-        yield key, sim
+        join_key = str(key[0]) + '\t' + str(key[1])
+        yield join_key, str(sim)
 
 
 
