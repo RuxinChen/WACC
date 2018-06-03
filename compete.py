@@ -45,7 +45,7 @@ class MRPair(MRJob):
         if haversine != None:
             if haversine[0] <= 3:     
                 yield key[0]+'\t'+key[1], str(haversine[0])
-
+                
     #def reducer_final(self, key, value):
     #    lst = list(value)
     #    length = len(lst)
@@ -79,50 +79,6 @@ def haversine(lat1, lng1, lat2, lng2):
     km = 6367 * c
     return km
 
-    def category(self, cat_list1, cat_list2):
-        '''
-        Return True if there is at least one same category 
-        for the two restaurant 
-        '''
-        for i in cat_list1:
-            if i in cat_list2 and i != "Restaurants":
-                return True 
-            else:
-                return False 
-
-    def levenshtein(self, cat_list1, cat_list2):
-        '''
-        Calculates the Levenshtein distance between two categories.
-        '''
-        #cat_list1 = cat_list1.remove("Restaurants")
-        #cat_list2 = cat_list2.remove("Restaurants")
-        n, m = len(cat_list1), len(cat_list2)
-        if n > m:
-            # Make sure n <= m, to use O(min(n,m)) space
-            cat_list1, cat_list2 = cat_list2, cat_list1
-            n,m = m,n
-        current = range(n+1)
-        for i in range(1,m+1):
-            previous, current = current, [i]+[0]*n
-            for j in range(1,n+1):
-                add, delete = previous[j]+1, current[j-1]+1
-                change = previous[j-1]
-                if cat_list1[j-1] != cat_list2[i-1]:
-                    change = change + 1
-                current[j] = min(add, delete, change)
-            
-        return current[n]
-
-    def compute_stars_sim(rating1, rating2):
-       '''
-       Compute the star rating similarity between two businesses
-       '''
-       MAX_STARS = 5
-       return MAX_STARS - abs(rating1 - rating2)
-
-    def compute_price_range(range1, range2):
-        MAX_PRICE = 4
-        return MAX_PRICE - abs(range1 - range2)
 ##########################################################################
 
 if __name__ == '__main__':
