@@ -20,7 +20,9 @@ class MRPair(MRJob):
         self.lst_of_city = ["Las Vegas", "Phoenix", "Toronto", "Montreal"]
 
     def mapper(self, _, line):
-        line = np.array(line.split(','))
+
+        line = next(csv.reader([line]))
+        #line = np.array(line.split(','))
         id1, lat1, lng1, city1= line[0], line[1], line[2], line[3][2:][:-1]
         for i, row in self.df.iterrows():
             id2, lat2, lng2, city2 = row[0], row[1], row[2], row[3][2:][:-1]
@@ -45,7 +47,7 @@ class MRPair(MRJob):
         if haversine != None:
             if haversine[0] <= 3:     
                 yield key[0]+'\t'+key[1], str(haversine[0])
-                
+
     #def reducer_final(self, key, value):
     #    lst = list(value)
     #    length = len(lst)
