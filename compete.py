@@ -15,10 +15,6 @@ class MRPair(MRJob):
     #OUTPUT_PROTOCOL = CsvProtocol
     OUTPUT_PROTOCOL = protocol.TextProtocol
 
-    def configure_options(self):
-        super(MRPair, self).configure_options()
-        self.add_file_option('--items', help='path to neighbor.csv')
-
     def mapper_init(self):
         self.df = pd.read_csv('neighbor.csv', sep=",", header = None)
         self.lst_of_city = ["Las Vegas", "Phoenix", "Toronto", "Montreal"]
@@ -36,7 +32,7 @@ class MRPair(MRJob):
                         yield (id1, id2), (lat1, lng1, lat2, lng2)
                     else:
                         yield (id2, id1), (lat2, lng2, lat1, lng1)
-
+    '''
     def combiner(self, key, value):
         location = list(value)[0]
         lat1, lng1= float(location[0]), float(location[1])
@@ -49,7 +45,7 @@ class MRPair(MRJob):
         if haversine != None:
             if haversine[0] <= 3:     
                 yield key[0]+'\t'+key[1], str(haversine[0])
-
+    '''
     #def reducer_final(self, key, value):
     #    lst = list(value)
     #    length = len(lst)
