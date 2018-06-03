@@ -15,6 +15,10 @@ class MRPair(MRJob):
     #OUTPUT_PROTOCOL = CsvProtocol
     OUTPUT_PROTOCOL = protocol.TextProtocol
 
+    def configure_options(self):
+        super(MRPair, self).configure_options()
+        self.add_file_option('--items', help='path to neighbor.csv')
+
     def mapper_init(self):
         self.df = pd.read_csv('neighbor.csv', sep=",", header = None)
         self.lst_of_city = ["Las Vegas", "Phoenix", "Toronto", "Montreal"]
