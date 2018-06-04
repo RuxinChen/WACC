@@ -3,6 +3,10 @@ import numpy as np
 import csv
 
 def merge():
+    '''
+    The function combines the results from k-means.py 
+    from different cities to one csv.file.
+    '''
 
     with open("merged.csv", 'w') as file:
         writer = csv.writer(file, delimiter=',')
