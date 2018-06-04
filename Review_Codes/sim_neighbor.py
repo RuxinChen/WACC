@@ -9,7 +9,8 @@ from gensim.matutils import cossim
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 import re
 ###############################################################################
-# python3 sim.py --jobconf mapreduce.job.reduces=1 --file CITY_rvw.csv --file whole_dict.txt new_neighbor_CITY.csv > sim_CITY.csv
+# python3 sim.py --jobconf mapreduce.job.reduces=1 --file CITY_rvw.csv --file
+# whole_dict.txt new_neighbor_CITY.csv > sim_CITY.csv
 
 # Calculate review similarity score of each pair restaurants,
 # and then calculate average review similarity score of each neighborhood
