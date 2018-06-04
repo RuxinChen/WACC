@@ -14,6 +14,11 @@ class MRAverage(MRJob):
         self.df = pd.read_csv('price_star_review.csv', sep=",")
 
     def mapper(self, _, line):
+        '''
+        this function yield business_id of restaurant1, which is the center
+        of the neighborhood, and yield the tuple of price, rating, number
+        of reviews of restaurants that has been paired with restaurant1
+        '''
         line = np.array(line.split(','))    
         id1, id2 = line[0], line[1]
         self.df = self.df.fillna(0)
@@ -25,6 +30,11 @@ class MRAverage(MRJob):
             yield id1, (price2, rating2, num_review2)
 
     def reducer(self, key, value):
+        '''
+        this function yield business_id of restaurant1, and the average price
+        rating, number of review of restaurants that are in the same neighborhood 
+        with restaurant1
+        '''
         sum_price = 0
         sum_rating = 0
         sum_review = 0
