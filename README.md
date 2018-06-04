@@ -22,7 +22,15 @@ This repository contains the final course project for CMSC 12300.
 <code>Project_info</code>: contains project proposal, presentation slides, and 
 final project.
 
+<code>Reviews_Codes</code>: contains scripts for reviews.
+
+<code>Reviews</code>: contains data and scripts for reviews
+
+<code>Reviews_similarity</code>: contains data of review similarity for 4 cities.
+
 <code>Scripts</code>: contains scripts for the project. 
+
+<code>Success_score</code>: contains data of success score for 4 cities
 
 
 ## Contributors
