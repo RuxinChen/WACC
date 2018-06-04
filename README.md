@@ -15,7 +15,7 @@ This repository contains the final course project for CMSC 12300.
 
 <code>Kmeans-data</code>: contains results of kmeans for several cities
 
-<code>Neighborhood_pairs</code>: contains all pairs of restaurants of 4 city we analyzed
+<code>Neighborhood_pairs</code>: contains all pairs of restaurants for the 4 cities we analyzed
 
 <code>Price_Star_Review</code>: contains results of average price, star, review counts in the neighborhood
 
