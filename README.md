@@ -10,7 +10,10 @@ This repository contains the final course project for CMSC 12300.
 ## About all sub-directories:
 
 <code>Data</code>: contains subset of our data and other datafile we use.
-
+<code>4-city-data</code>: contains data of 4 cities and each includes business id, longitude, latitude, city, price range, stars and review counts
+<code>Kmeans-data</code>: contains results of kmeans for several cities
+<code>Neighborhood_pairs</code>: contains all pairs of restaurants of 4 city we analyzed
+<code>Price_Star_Review</code>: contains results of average price, star, review counts in the neighborhood
 <code>Project_info</code>: contains project proposal, presentation slides, and 
 final project.
 
