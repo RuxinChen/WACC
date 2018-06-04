@@ -17,14 +17,13 @@ class MRCat(MRJob):
 
         line = np.array(line.split(','))
         bid1 = line[0]
-        bid2 = line[1]
         l = float(line[2])
         o = line[3]
         if o: 
             o = 1
         else:
             o = 0
-        yield (bid1, bid2), (l, o)
+        yield bid1 (l, o)
 
     def reducer(self, key, value):
         value = list(value)
@@ -32,7 +31,7 @@ class MRCat(MRJob):
         o = [value[i][1] for i in range(len(value))]
         avg_l = sum(l)/len(l)
         avg_o = sum(o)/len(o)
-        yield key[0]+'\t'+ key[1], str(avg_l) + '\t' + str(avg_o)
+        yield key, str(avg_l) + '\t' + str(avg_o)
 
 ##########################################################################
 
