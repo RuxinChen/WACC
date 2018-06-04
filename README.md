@@ -11,28 +11,28 @@ This repository contains the final course project for CMSC 12300.
 
 <code>Data</code>: contains subset of our data and other datafile we use.
 
-<code>4-city-data</code>: contains data of 4 cities and each includes business id, longitude, latitude, city, price range, stars and review counts
+--<code>4-city-data</code>: contains data of 4 cities and each includes business id, longitude, latitude, city, price range, stars and review counts
 
-<code>Category</code>: contains results of category similarity for 4 cities
+--<code>Category</code>: contains results of category similarity for 4 cities
 
-<code>Kmeans-data</code>: contains results of kmeans for several cities
+--<code>Kmeans-data</code>: contains results of kmeans for several cities
 
-<code>Neighborhood_pairs</code>: contains all pairs of restaurants for the 4 cities we analyzed
+--<code>Neighborhood_pairs</code>: contains all pairs of restaurants for the 4 cities we analyzed
 
-<code>Price_Star_Review</code>: contains results of average price, star, review counts in the neighborhood
+--<code>Price_Star_Review</code>: contains results of average price, star, review counts in the neighborhood
+
+--<code>Success_score</code>: contains data of success score for 4 cities
+
+--<code>Reviews_similarity</code>: contains data of review similarity for 4 cities.
 
 <code>Project_info</code>: contains project proposal, presentation slides, and 
 final project.
 
 <code>Reviews_Codes</code>: contains scripts for reviews.
 
-<code>Reviews</code>: contains data and scripts for reviews
-
-<code>Reviews_similarity</code>: contains data of review similarity for 4 cities.
 
 <code>Scripts</code>: contains scripts for the project. 
 
-<code>Success_score</code>: contains data of success score for 4 cities
 
 
 ## Contributors
