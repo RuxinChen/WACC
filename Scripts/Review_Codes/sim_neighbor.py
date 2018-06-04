@@ -81,8 +81,6 @@ def rvws_to_wordlist(rvws, remove_stopwords=False):
     rvws_text = re.sub("[^a-zA-Z]", " ", rvws)
     words = rvws_text.lower().split()
     if remove_stopwords:
-        # stops = set(stopwords.words("english"))
-        # words = [w for w in words if not w in stops]
         words = [w for w in words if not w in ENGLISH_STOP_WORDS]
     return words
 
