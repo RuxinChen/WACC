@@ -28,10 +28,10 @@ This repository contains the final course project for CMSC 12300.
 <code>Project_info</code>: contains project proposal, presentation slides, and 
 final project.
 
-<code>Reviews_Codes</code>: contains scripts for reviews.
-
-
 <code>Scripts</code>: contains scripts for the project. 
+
+--<code>Reviews_Codes</code>: contains scripts for reviews.
+--<code>Category</code>: contains scripts for category similarity.
 
 
 
