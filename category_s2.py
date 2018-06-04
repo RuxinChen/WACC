@@ -18,8 +18,12 @@ class MRCat(MRJob):
         line = np.array(line.split(','))
         bid1 = line[0]
         bid2 = line[1]
-        l = line[2]
+        l = float(line[2])
         o = line[3]
+        if o: 
+            o = 1
+        else:
+            o = 0
         yield (bid1, bid2), (l, o)
 
     def reducer(self, key, value):
