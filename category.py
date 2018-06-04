@@ -6,7 +6,7 @@ from mrjob import protocol
 import csv
 from math import radians, cos, sin, asin, sqrt
 ##################################################################################
-# python3 compete.py --file new_neighbor_d3.csv -r dataproc --num-core-instances 8
+# python3 category.py --file new_neighbor_d3.csv -r dataproc --num-core-instances 8
 # new_neighbor_d3.csv > category_d3.csv
 ##################################################################################
 
