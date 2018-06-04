@@ -1,6 +1,6 @@
 # WACC Yelp data analysis
 
-CAPP 30123: Computer Science with Application-3
+CMCS 12300: Computer Science with Application-3
 
 The University of Chicago | Spring 2018
 
