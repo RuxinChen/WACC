@@ -19,11 +19,11 @@ class MRCat(MRJob):
         bid1 = line[0]
         l = float(line[2])
         o = line[3]
-        if o: 
+        if o:
             o = 1
         else:
             o = 0
-        yield bid1 (l, o)
+        yield bid1, (l, o)
 
     def reducer(self, key, value):
         value = list(value)
