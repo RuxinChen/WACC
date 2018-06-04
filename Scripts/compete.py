@@ -10,6 +10,9 @@ from math import radians, cos, sin, asin, sqrt
 ########################################################################
 
 class MRPair(MRJob):
+    '''
+    The class yield the restaurant pairs with its haversine distance
+    '''
 
     OUTPUT_PROTOCOL = protocol.TextProtocol
 
