@@ -26,18 +26,26 @@ class MRAverage(MRJob):
         count_p = 0
         count_r = 0 
         for i in value:
-            if not value[0]:
+            if not i[0]:
                 count_p += 0
             else:
                 sum_price+= i[0]
                 count_p += 1
-            if not value[1]:
+            if not i[1]:
                 count_r += 0 
             else:
                 sum_rating += i[1]
                 count_r += 1
-        if count_p != 0 and count_r != 0:
-            yield key, (sum_price/count_p, sum_rating/count_r) 
+
+        if count_p == 0:
+            avg_p = 0
+        elif count_r == 0:
+            avg_r = 0
+        else:
+            avg_r = sum_rating/count_p
+            avg_p = sum_price/count_r
+
+        yield key, (avg_p, avg_r)
 
 
 if __name__ == '__main__':
