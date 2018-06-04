@@ -13,6 +13,8 @@ This repository contains the final course project for CMSC 12300.
 
 <code>4-city-data</code>: contains data of 4 cities and each includes business id, longitude, latitude, city, price range, stars and review counts
 
+<code>Category</code>: contains results of category similarity for 4 cities
+
 <code>Kmeans-data</code>: contains results of kmeans for several cities
 
 <code>Neighborhood_pairs</code>: contains all pairs of restaurants for the 4 cities we analyzed
