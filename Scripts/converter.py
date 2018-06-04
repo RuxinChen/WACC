@@ -3,6 +3,11 @@ import argparse
 
 def converter(old_csv, new_csv):
 
+    '''
+    The function changes the output csv from mapreduce 
+    to the correct format to be processed 
+    '''
+
     with open(old_csv, 'r') as f1:
         with open(new_csv, 'w') as f2:
             reader = csv.reader(f1, delimiter='\t')
