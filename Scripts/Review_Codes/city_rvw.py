@@ -16,7 +16,7 @@ def go():
         a = id1.join(rvw, rsuffix='_rvw')
         a.drop('business_id_rvw',inplace=True, axis=1)
         a['business_id'] = a['business_id'].apply(lambda x: x[2:-1])
-        # print(a['business_id'][0])
+
         a.to_csv('{}_rvw.csv'.format(city), header=True, index=False)
 
 
