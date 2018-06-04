@@ -1,11 +1,11 @@
 # WACC Yelp data analysis
 
-CMCS 12300: Computer Science with Application-3
+CMSC 12300: Computer Science with Application-3
 
 The University of Chicago | Spring 2018
 
 ## About this repository:
-This repository contains the final course project for CAPP 30123.
+This repository contains the final course project for CMSC 12300.
 
 ## About all sub-directories:
 
