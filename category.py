@@ -2,29 +2,25 @@ import numpy as np
 import pandas as pd
 from mrjob.job import MRJob
 from mrjob.step import MRStep
-#from mr3px.csvprotocol import CsvProtocol
 from mrjob import protocol
 import csv
 from math import radians, cos, sin, asin, sqrt
-################################################################################
-# python3 compete.py --file new_neighbor_d3.csv new_neighbor_d3.csv > category_d3.csv
-################################################################################
+##################################################################################
+# python3 compete.py --file new_neighbor_d3.csv -r dataproc --num-core-instances 8
+# new_neighbor_d3.csv > category_d3.csv
+##################################################################################
 
 class MRPair(MRJob):
 
-    #OUTPUT_PROTOCOL = CsvProtocol
     OUTPUT_PROTOCOL = protocol.TextProtocol
 
     def mapper_init(self):
         self.df = pd.read_csv('category.csv', sep=",", encoding='utf-8')
 
     def mapper(self, _, line):
-        #print(len(line))
+
         line = np.array(line.split(','))
         id1, id2 = line[0], line[1]
-        #id1_val, id2_val = line[0][1:-1], line[1][1:-1]
-        #print(id2)
-        #print(self.df['business_id'][:10])
         cat1 = list(self.df[self.df['business_id'] == id1]['categories'])
         cat1 = cat1[0].split(",")
         cat1[0] = cat1[0][2:-1]
@@ -33,11 +29,7 @@ class MRPair(MRJob):
         cat2 = cat2[0].split(",")
         cat2[0] = cat2[0][2:-1]
         cat2[-1] = cat2[-1][2:-1]
-        #print(id1)
-        #print(cat1)
-        #yield line[0],line[1]
         yield (id1, id2), (cat1, cat2)
-        #yield "id1", "id2"
 
     def reducer(self, key, value):
         lst_of_categories = list(value)[0]

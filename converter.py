@@ -2,14 +2,7 @@ import csv
 import argparse
 
 def converter(old_csv, new_csv):
-    '''
-    Writes contents of old_csv into new_csv, with proper formatting
-    Inputs:
-        old_csv: (file path) mrjob output that is tab-delimited
-        new_csv: (file path) output file
-    Returns:
-        Nothing, but new csv is created
-    '''
+
     with open(old_csv, 'r') as f1:
         with open(new_csv, 'w') as f2:
             reader = csv.reader(f1, delimiter='\t')

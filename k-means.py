@@ -8,7 +8,7 @@ import numpy as np
 import csv
 import heapq
 ##################################################################################
-# python3 k-means.py --jobconf mapreduce.job.reduces=1 --file cleveland.csv cleveland.csv
+# python3 k-means.py --jobconf mapreduce.job.reduces=1 --file cleveland.csv cleveland.csv> cleveland_kmeans.csv
 ##################################################################################
 
 class MRkmeans(MRJob):
@@ -18,11 +18,10 @@ class MRkmeans(MRJob):
         self.df = pd.read_csv("cleveland.csv", sep=",", names=['business_id', \
             'lat', 'lng', 'city', 'star','price', 'review'])
         self.df = self.df.sample(frac=0.2, replace=False)
-        #print(self.df['lat'])
-        #print(self.df['lng'])
+
         self.df['lat']= self.df['lat'].astype(float)
         self.df['lng']= self.df['lng'].astype(float)
-        #print(type(a))
+
         self.location = self.df[['lng', 'lat']]
         self.kmeans = KMeans(n_clusters= 10, random_state=1234).fit(np.array(self.location))
 
@@ -83,10 +82,4 @@ class MRkmeans(MRJob):
 if __name__ == '__main__':
 
     MRkmeans.run()
-
-
-
-
-
-
 
