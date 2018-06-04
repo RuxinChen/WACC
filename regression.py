@@ -10,7 +10,14 @@ from sklearn import linear_model
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 
+
+######################################################################
+# Run OLS regression for four cities separately
+
+######################################################################
+
 def go():
+    params = {}
 
     for city in ['PNX', 'MAD', 'MAK', 'CLV']:
 
@@ -25,31 +32,42 @@ def go():
         df_reviews.columns = ['business_id', 'avr_re_sim']
         df_reviews['avr_re_sim'] = df_reviews['avr_re_sim'].apply(float)
 
+        df_cate = pd.read_csv('category_{}.csv'.format(city), sep='\t',\
+                 names=['business_id', 'avr_cate_sim', 'overlap'])
+        df_cate['business_id'] = df_cate['business_id'].apply(lambda x:x[2:-1])
+
+
+
         cols = ['business_id', 'score']
         df_score = pd.read_csv('success_score_{}.csv'.format(city),\
         sep=',', usecols = cols)
         df_score['business_id'] = df_score['business_id'].apply(lambda x: x[2:-1])
 
-        df_sent = pd.read_csv('sentiment_analysis.csv', names=['business_id', 'sent_score'])
-
+        df_sent = pd.read_csv('sentiment_analysis.csv', \
+                                    names=['business_id', 'sent_score'])
 
 
         df_all = pd.merge(df_score, df_psr,on=['business_id'],how='left')
         df_all = pd.merge(df_all, df_reviews, on=['business_id'], how='left')
+        df_all = pd.merge(df_all, df_cate, on=['business_id'], how='left')
         df_all = pd.merge(df_all, df_sent, on=['business_id'], how='left')
+
         df_all['const'] = 1
 
-        reg1 = sm.OLS(endog=df_all['score'].astype(float), exog=df_all[['const', 'avr_rating','avr_price', 'avr_num_review', 'avr_re_sim', 'sent_score']].astype(float), missing='drop')
+        reg1 = sm.OLS(endog=df_all['score'].astype(float), \
+            exog=df_all[['const', 'avr_rating','avr_price', 'avr_num_review', \
+            'avr_re_sim', 'avr_cate_sim', 'sent_score']].astype(float),\
+             missing='drop')
         #'avr_sentiment',
 
         results1 = reg1.fit()
         print(results1.summary())
-        print(results1.params)
-        print(results1.tvalues)
+        print()
+        params[city] = results1.params
 
-        # fig, ax = plt.subplots()
-        # fig = sm.graphics.plot_fit(results1, 0, ax=ax)
-        # plt.show()
+    print('Coefficient Report')
+    print(pd.DataFrame(params))
+
 
 
 if __name__ == '__main__':
