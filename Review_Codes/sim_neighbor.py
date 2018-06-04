@@ -8,12 +8,12 @@ from gensim.corpora import Dictionary
 from gensim.matutils import cossim
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 import re
-##################################################################
-# python3 sim.py --file CITY_rvw.csv --file whole_dict.txt new_neighbor_CITY.csv > sim_CITY.csv
+###############################################################################
+# python3 sim.py --jobconf mapreduce.job.reduces=1 --file CITY_rvw.csv --file whole_dict.txt new_neighbor_CITY.csv > sim_CITY.csv
 
 # Calculate review similarity score of each pair restaurants,
 # and then calculate average review similarity score of each neighborhood
-##################################################################
+###############################################################################
 
 
 class MRPair(MRJob):
@@ -87,7 +87,5 @@ def rvws_to_wordlist(rvws, remove_stopwords=False):
 
 
 if __name__ == '__main__':
-    # df = pd.read_csv('rvw_groupby_rest_little.csv')
-    # print('df')
-    # df = pd.read_csv('rvw_groupby_rest.csv')
+
     MRPair.run()
