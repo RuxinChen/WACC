@@ -4,9 +4,9 @@ from mrjob.job import MRJob
 from mrjob.step import MRStep
 from mrjob import protocol
 import csv
-###############################################################################
-# python3 price.py --jobconf mapreduce.job.reduces=1 new_neighbor_500_6.txt.csv
-###############################################################################
+########################################################################################
+# python3 price_star_review.py --file price_star_review.csv new_neighbor_500_6.txt.csv
+########################################################################################
 
 class MRAverage(MRJob):
 
@@ -16,11 +16,14 @@ class MRAverage(MRJob):
     def mapper(self, _, line):
         line = np.array(line.split(','))    
         id1, id2 = line[0], line[1]
+        self.df = self.df.fillna(0)
         price2 = float(self.df[self.df['business_id'] == id2]['attributes.RestaurantsPriceRange2'])
         rating2 = float(self.df[self.df['business_id'] == id2]['stars'])
         num_review2 = float(self.df[self.df['business_id'] == id2]['review_count'])
-        yield id1, (price2, rating2, num_review2)
-    
+        # min price, star, and review_count in original data are all not 0
+        if price2 != 0 and rating2 != 0 and num_review2 != 0:       
+            yield id1, (price2, rating2, num_review2)
+
     def reducer(self, key, value):
         sum_price = 0
         sum_rating = 0
@@ -52,8 +55,8 @@ class MRAverage(MRJob):
         elif count_n == 0:
             avg_n = 0
         else:
-            avg_r = sum_rating/count_p
-            avg_p = sum_price/count_r
+            avg_r = sum_rating/count_r
+            avg_p = sum_price/count_p
             avg_n = sum_review/count_n
 
         yield key, (avg_p, avg_r, avg_n)
