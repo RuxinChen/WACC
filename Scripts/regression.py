@@ -1,14 +1,12 @@
 
 # Regress success score on average rating(neighborhood),
 # average price range(neighborhood), average number of reviews (neighborhood),
-# average sentiment score (neighborhood), and average review similarity (neighborhood)
-# by OLS.
+# average review similarity (neighborhood), average category similarity (neighborhood),
+# average sentiment score (neighborhood) by OLS.
 
 import pandas as pd
 import numpy as np
-from sklearn import linear_model
 import statsmodels.api as sm
-import matplotlib.pyplot as plt
 
 
 ######################################################################
@@ -19,8 +17,7 @@ import matplotlib.pyplot as plt
 def go():
     params = {}
 
-    for city in ['MAK']:
-        #'PNX', 'MAD', 'CLV',
+    for city in ['PNX', 'MAD', 'MAK', 'CLV']:
 
         df_psr = pd.read_csv('~/WACC/Price_Star_Review/{}_price_star_review.csv'.format(city), sep=',')
         df_psr.columns = ['business_id', 'avr_rating', 'avr_num_review']
@@ -44,8 +41,8 @@ def go():
         sep=',', usecols = cols)
         df_score['business_id'] = df_score['business_id'].apply(lambda x: x[2:-1])
 
-        df_sent = pd.read_csv('sentiment_analysis.csv', \
-                                    names=['business_id', 'sent_score'])
+        df_sent = pd.read_csv('avg_sent.csv', \
+                                    names=['business_id', 'avr_sent_score'])
 
 
         df_all = pd.merge(df_score, df_psr,on=['business_id'],how='left')
@@ -57,9 +54,8 @@ def go():
 
         reg1 = sm.OLS(endog=df_all['score'].astype(float), \
             exog=df_all[['const', 'avr_rating','avr_price', 'avr_num_review', \
-            'avr_re_sim', 'avr_cate_sim', 'sent_score']].astype(float),\
+            'avr_re_sim', 'avr_cate_sim', 'avr_sent_score']].astype(float),\
                 missing='drop')
-        #'avr_sentiment',
 
         results1 = reg1.fit()
         print(results1.summary())
