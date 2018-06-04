@@ -4,9 +4,9 @@ from mrjob.job import MRJob
 from mrjob.step import MRStep
 from mrjob import protocol
 import csv
-########################################################################################
-# python3 price_star_review.py --file price_star_review.csv new_neighbor_500_6.txt.csv
-########################################################################################
+###########################################################################################
+# python3 price_star_review.py --file price_star_review.csv <neighborhood pairs file name>
+###########################################################################################
 
 class MRAverage(MRJob):
 
